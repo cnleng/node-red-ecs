@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    RED.nodes.registerType('node-red-ecs',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            server: {value:"",type:"node-ecs"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"node-red-ecs";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="node-red-ecs">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">         
+        <label for="node-input-server"><i class="icon-tag"></i> Server</label>
+         <input type="node-ecs" id="node-input-server" placeholder="Server">
+     </div>
+</script>
+
+<script type="text/x-red" data-help-name="node-red-ecs">
+    <p>A simple node that takes a parameters and send data collection command to ECS Hosts</p>
+</script>
